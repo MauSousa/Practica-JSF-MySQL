@@ -21,7 +21,7 @@ public class AccesoBD {
     private static String servidor = "127.0.0.1";
     private static String  basedatos = "productos";
     private static String usuario = "root";
-    private static String clave = "hola123";
+    private static String clave = "root";
     private static String ruta = "";
     
     public AccesoBD() {
