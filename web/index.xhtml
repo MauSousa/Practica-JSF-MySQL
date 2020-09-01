@@ -11,21 +11,21 @@
             <h1>Proporciona los datos del producto</h1>
             <h:panelGrid columns="2" border="1">
                 <h:panelGroup><span>Clave</span></h:panelGroup>
-                <h:panelGroup><h:inputText value="#{guardar.clave}" autocomplete="off" required="" styleClass="texto"/></h:panelGroup>
+                <h:panelGroup><h:inputText value="#{guardar.clave}" autocomplete="off" required="true" styleClass="texto"/></h:panelGroup>
 
                 <h:panelGroup><span>Nombre</span></h:panelGroup>
-                <h:panelGroup><h:inputText value="#{guardar.nombre}" autocomplete="off" required="" styleClass="texto"/></h:panelGroup>
+                <h:panelGroup><h:inputText value="#{guardar.nombre}" autocomplete="off" required="true" styleClass="texto"/></h:panelGroup>
 
                 <h:panelGroup><span>Precio</span></h:panelGroup>
-                <h:panelGroup><h:inputText value="#{guardar.precio}" autocomplete="off" required="" styleClass="texto"/></h:panelGroup>
+                <h:panelGroup><h:inputText value="#{guardar.precio}" autocomplete="off" required="true" styleClass="texto"/></h:panelGroup>
 
                 <h:panelGroup><span>Cantidad</span></h:panelGroup>
-                <h:panelGroup><h:inputText value="#{guardar.cantidad}" autocomplete="off" required="" styleClass="texto"/></h:panelGroup>
+                <h:panelGroup><h:inputText value="#{guardar.cantidad}" autocomplete="off" required="true" styleClass="texto"/></h:panelGroup>
             </h:panelGrid>   
             <div class="botones">
                 <h:commandButton class="borrar" value="Borrar" type="reset"/>
-                <h:commandButton class="registrar" value="Registrar" actionListener="#{login.registrarProducto()}"/> 
-                <h:commandButton class="ver-producto" value="Ver Producto" actionListener="#{login.mostrarProducto()}"/>
+                <h:commandButton class="registrar" value="Registrar" actionListener="#{guardar.registraProducto()}"/> 
+                <h:commandButton class="ver-producto" value="Ver Producto" actionListener="#{guardar.mostrarProducto()}"/>
             </div>
         </h:form>
 

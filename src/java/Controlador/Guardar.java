@@ -12,11 +12,19 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+@ManagedBean
+@SessionScoped
  
- @ManagedBean
- @SessionScoped
 public class Guardar {
+    
+    private String clave;
+    private String nombre;
+    private String precio;
+    private String cantidad;
+    
+    Vista vista = new Vista();
 
+    
     /**
      * @return the clave
      */
@@ -74,14 +82,17 @@ public class Guardar {
     }
    
     
-    private String clave;
-    private String nombre;
-    private String precio;
-    private String cantidad;
+   
     
-    public void registraProducto()
-    {
+    public void registraProducto() {
+        
         LoginMysql.agregar(getClave(), getNombre(), getPrecio(), getCantidad());
+        vista.vista0();
         
     }
+    
+    public void mostrarProducto(){
+        LoginMysql.validar(getClave(), getNombre(), getPrecio(), getCantidad());
+        vista.vista1();
     }
+}

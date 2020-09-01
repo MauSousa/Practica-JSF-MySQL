@@ -8,6 +8,7 @@ package Modelo;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.sql.*;
+
 /**
  *
  * @author USUARIO
@@ -42,16 +43,13 @@ public class LoginMysql {
             if (respuesta.next()) {
                 return true;
             }
-        } 
-        catch (Exception e) {
-            System.out.println("Error de logeo" + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error, no hay productos" + e.getMessage());
             return false;
-        } 
-        finally {
+        } finally {
             try {
                 conexion.close();
-            } 
-            catch (Exception e) {
+            } catch (Exception e) {
             }
         }
         return false;
@@ -59,24 +57,21 @@ public class LoginMysql {
     }
 
     public static void agregar(String clave, String nombre, String precio, String cantidad) {
-         Connection conexion = null;
-      Statement sql;
-      try{
-        conexion = AccesoBD.getConexion();
-        sql = conexion.createStatement();
-        sql.executeUpdate("insert into produco (clave, nombre, precio, cantidad) values('" + clave + "','" + nombre + "','" + precio + "','" + cantidad + "');"                                    );
-      }
-     catch(Exception e)
-      {
-       System.out.println("Error de insercion" + e.getMessage());
-      }
-     finally{
-        try{
-          conexion.close();
+        Connection conexion = null;
+        Statement sql;
+        try {
+            conexion = AccesoBD.getConexion();
+            sql = conexion.createStatement();
+            sql.executeUpdate("insert into producto (clave, nombre, precio, cantidad) values('" + clave + "','" + nombre + "','" + precio + "','" + cantidad + "');");
+            System.out.println("Producto agregado");
+        } catch (Exception e) {
+            System.out.println("Error de insercion" + e.getMessage());
+        } finally {
+            try {
+                conexion.close();
+            } catch (Exception e) {
+            }
         }
-        catch(Exception e){}
-      } 
 
     }
 }
-
