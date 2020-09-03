@@ -91,8 +91,8 @@ public class Guardar {
         
     }
     
-    public void mostrarProducto(){
+    /*public void mostrarProducto(){
         LoginMysql.validar(getClave(), getNombre(), getPrecio(), getCantidad());
         vista.vista1();
-    }
+    }*/
 }
