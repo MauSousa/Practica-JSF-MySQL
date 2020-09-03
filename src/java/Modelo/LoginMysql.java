@@ -23,7 +23,7 @@ public class LoginMysql {
     public LoginMysql() {
     }
 
-    public static boolean validar(String clave, String nombre, String precio, String cantidad) {
+    /* public static boolean validar(String clave, String nombre, String precio, String cantidad) {
         Connection conexion = null;
         PreparedStatement sql = null;
 
@@ -54,7 +54,7 @@ public class LoginMysql {
         }
         return false;
 
-    }
+    } */
 
     public static void agregar(String clave, String nombre, String precio, String cantidad) {
         Connection conexion = null;
