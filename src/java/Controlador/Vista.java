@@ -1,6 +1,7 @@
 package Controlador;
 
 public class Vista {
+   
     AdministrarVistas administradorArchivos;
     
     public Vista(){
