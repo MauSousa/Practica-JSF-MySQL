@@ -1,0 +1,44 @@
+body {
+	margin-left: 20px;
+	font-family: Verdana;
+}
+
+
+table {
+	border-collapse: collapse;
+	border: solid 1px blue;
+	width: 50%;
+}
+
+td, tr {
+	width: 50%;
+}
+
+span {
+	display: flex;
+	justify-content: center;
+	font-family: Verdana;
+	font-size: 18px;
+}
+
+.regresar {
+	margin-top: 10px;
+	width: 8em;
+	height: 2em;
+	border: solid red;
+	letter-spacing: 1px;
+	background-color: #ff1a1a;
+	color: #000001;
+	border-radius: 2px;
+	border: solid #ff1a1a 1px;
+	font-family: Verdana;
+}
+.regresar:hover {
+	background-color: #ff4d4d;
+	color: #000000;
+	letter-spacing: 1px;
+	border: solid #ff6666 1px;
+	border-radius: 2px;
+}
+
+
