@@ -9,10 +9,11 @@ h1 {
 
 .botones {
     margin-top: 15px;
-    width: 17em;
-    display: flex;
+    width: 20em;
+    height: 2em;
+	display: flex;
     justify-content: space-between;
-}
+} 
 
 table {
     border-collapse: collapse;
@@ -27,4 +28,67 @@ span {
 
 .texto{
     margin: 5px;
+}
+.borrar {
+	border: solid red;
+    letter-spacing: 1px;
+    background-color: #ff1a1a;
+    color: #000001;
+    border-radius: 2px;
+    border: solid #ff1a1a 1px;
+    font-family: Verdana;
+}
+.borrar:hover {
+	background-color: #ff4d4d;
+	color: #000000;
+	letter-spacing: 1px;
+	border: solid #ff6666 1px;
+	border-radius: 2px;
+}
+
+input[type="text"] {
+	width: 90%;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-left: 5px;
+	letter-spacing: 1px;
+	border: 0.5px solid blue;
+	border-radius: 2px;
+}
+
+.registrar {
+	letter-spacing: 1px;                                                                                            
+	background-color: #009eb3;                                                                                       
+	color: #000001;                                                                                                
+    border-radius: 2px;                                                                                              
+	border: solid #009eb3 1px;                                                                                    
+	font-family: Verdana;                                                        
+}
+
+.registrar:hover {
+	background-color: #00b4cc;
+	border: solid #00b4cc 1px;
+	border-radius; 
+}
+
+.ver-producto {
+	letter-spacing: 1px;
+	font-family: Verdana;
+	background-color: #59b300;
+	border: solid 1px #59b300;
+	border-radius: 2px;
+}
+
+.ver-producto:hover {
+	background-color: #66cc00;
+	border: solid 1px #66cc00;
+}
+
+input[type="text"]:hover {
+	background: #edf7f8;
+}
+
+input[type="text"]:focus {
+	background-color: #cce7ea;
+	border: solid 0.5px blue;
 }
