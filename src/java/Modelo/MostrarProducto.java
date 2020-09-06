@@ -1,6 +1,6 @@
 package Modelo;
 
-import Controlador.Visualizar;
+import Controlador.Productos;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,16 +10,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import Controlador.Productos;
 
 @ManagedBean
-@SessionScoped
 
 public class MostrarProducto implements Serializable {
 
     private static final long serialVersionUID = 6081417964063918994L;
-
-    public List<Visualizar> getVisualizar() throws ClassNotFoundException, SQLException {
+    
+    
+    public List<Productos> getProductos() throws ClassNotFoundException, SQLException {
 
         Connection connect = null;
 
@@ -40,14 +40,13 @@ public class MostrarProducto implements Serializable {
             System.out.println(ex.getMessage());
         }
 
-        List<Visualizar> visualizar_lista = new ArrayList<Visualizar>();
-        PreparedStatement pstmt = connect
-                .prepareStatement("select clave, nombre, precio, cantidad from producto");
+        List<Productos> visualizar_lista = new ArrayList<Productos>();
+        PreparedStatement pstmt = connect.prepareStatement("select clave, nombre, precio, cantidad from producto");
         ResultSet rs = pstmt.executeQuery();
 
         while (rs.next()) {
 
-            Visualizar visual = new Visualizar();
+            Productos visual = new Productos();
             visual.setClave(rs.getString("clave"));
             visual.setNombre(rs.getString("nombre"));
             visual.setPrecio(rs.getString("precio"));
@@ -56,6 +55,7 @@ public class MostrarProducto implements Serializable {
             visualizar_lista.add(visual);
 
         }
+        
 
         // close resources
         rs.close();

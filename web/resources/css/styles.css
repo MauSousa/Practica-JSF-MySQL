@@ -68,7 +68,7 @@ input[type="text"] {
 .registrar:hover {
 	background-color: #00b4cc;
 	border: solid #00b4cc 1px;
-	border-radius; 
+	border-radius: 2px; 
 }
 
 .ver-producto {

@@ -4,9 +4,22 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Practica 5 MySQL</title>
-
+        <h:outputStylesheet library = "css" name = "style.css" /> 
     </h:head>
     <h:body>
-        <div>TODO write content</div>
+        <h:panelGrid columns="2" border="1">
+                <h:panelGroup><span>Clave</span></h:panelGroup>
+                <h:panelGroup><span><h:outputText value=""/></span></h:panelGroup>
+
+                <h:panelGroup><span>Nombre</span></h:panelGroup>
+                <h:panelGroup><span><h:outputText value=""/></span></h:panelGroup>
+
+                <h:panelGroup><span>Precio</span></h:panelGroup>
+                <h:panelGroup><span><h:outputText value=""/></span></h:panelGroup>
+
+                <h:panelGroup><span>Cantidad</span></h:panelGroup>
+                <h:panelGroup><span><h:outputText value=""/></span></h:panelGroup>
+            </h:panelGrid>   
+        <h:form> <h:commandButton class="regresar" value="Regresar" action="#{regresar.volver()}"/> </h:form>
     </h:body>
 </html>
