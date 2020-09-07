@@ -20,4 +20,8 @@ public class Vista {
         administradorArchivos.verificarArchivo(2);
         
     }
+    public void vista3(){
+        administradorArchivos.verificarArchivo(3);
+        
+    }
 }

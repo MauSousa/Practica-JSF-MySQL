@@ -5,6 +5,7 @@ body {
 
 h1 {
     font-weight: lighter;
+    letter-spacing: 1px;
 }
 
 .botones {
@@ -92,3 +93,4 @@ input[type="text"]:focus {
 	background-color: #cce7ea;
 	border: solid 0.5px blue;
 }
+

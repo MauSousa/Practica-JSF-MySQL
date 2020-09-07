@@ -10,10 +10,9 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+
 
 @ManagedBean
-@SessionScoped
  
 public class Guardar {
     
@@ -91,8 +90,8 @@ public class Guardar {
         
     }
     
-    /*public void mostrarProducto(){
-        LoginMysql.validar(getClave(), getNombre(), getPrecio(), getCantidad());
-        vista.vista1();
-    }*/
+    public void mostrarProducto(){
+        LoginMysql.validar();
+        vista.vista3();
+    }
 }

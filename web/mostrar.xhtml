@@ -1,25 +1,44 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
     <h:head>
-        <title>Practica 5 MySQL</title>
-        <h:outputStylesheet library = "css" name = "style.css" /> 
+    	
     </h:head>
     <h:body>
-        <h:panelGrid columns="2" border="1">
-                <h:panelGroup><span>Clave</span></h:panelGroup>
-                <h:panelGroup><span><h:outputText value=""/></span></h:panelGroup>
 
-                <h:panelGroup><span>Nombre</span></h:panelGroup>
-                <h:panelGroup><span><h:outputText value=""/></span></h:panelGroup>
+    	<h1>JSF 2 dataTable example</h1>
 
-                <h:panelGroup><span>Precio</span></h:panelGroup>
-                <h:panelGroup><span><h:outputText value=""/></span></h:panelGroup>
+    		<h:dataTable 
+    			value="guradar.validar" var="producto" border="1"
+    		>
 
-                <h:panelGroup><span>Cantidad</span></h:panelGroup>
-                <h:panelGroup><span><h:outputText value=""/></span></h:panelGroup>
-            </h:panelGrid>   
-        <h:form> <h:commandButton class="regresar" value="Regresar" action="#{regresar.volver()}"/> </h:form>
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Clave</f:facet>
+    				<!-- row record -->
+                                #{producto.clave}
+    			</h:column>
+
+    			<h:column>
+    				<f:facet name="header">Nombre</f:facet>
+    				#{producto.nombre}
+    			</h:column>
+
+    			<h:column>
+    				<f:facet name="header">Precio</f:facet>
+    				#{producto.precio}
+    			</h:column>
+
+    			<h:column>
+    				<f:facet name="header">Cantidad</f:facet>
+    				#{producto.cantidad}
+    			</h:column>
+
+    		</h:dataTable>
+
     </h:body>
 </html>

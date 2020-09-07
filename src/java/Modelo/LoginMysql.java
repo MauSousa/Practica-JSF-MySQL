@@ -1,29 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import java.sql.*;
+import java.util.ArrayList;
 
-/**
- *
- * @author USUARIO
- */
 @ManagedBean
-@SessionScoped
 public class LoginMysql {
-
-    /**
-     * Creates a new instance of LoginMySql
-     */
+    
+    private static String clave;
+    private static String nombre;
+    private static String precio;
+    private static String cantidad;
+    
     public LoginMysql() {
     }
 
-    /* public static boolean validar(String clave, String nombre, String precio, String cantidad) {
+     public static boolean validar() {
+        
         Connection conexion = null;
         PreparedStatement sql = null;
 
@@ -31,7 +24,7 @@ public class LoginMysql {
 
             conexion = AccesoBD.getConexion();
 
-            sql = conexion.prepareStatement("select * from producto");
+            sql = conexion.prepareStatement("select clave, nombre, precio, cantidad from producto");
             sql.setString(1, clave);
             sql.setString(2, nombre);
             sql.setString(3, precio);
@@ -40,8 +33,16 @@ public class LoginMysql {
 
             respuesta = sql.executeQuery();
 
-            if (respuesta.next()) {
-                return true;
+            while(respuesta.next()){
+               
+                    ArrayList<String> productos = new ArrayList<String>();
+                    productos.add(respuesta.getString("clave"));
+                    productos.add(respuesta.getString("nombre"));
+                    productos.add(respuesta.getString("precio"));
+                    productos.add(respuesta.getString("cantidad"));            
+                
+                
+                
             }
         } catch (Exception e) {
             System.out.println("Error, no hay productos" + e.getMessage());
@@ -54,7 +55,7 @@ public class LoginMysql {
         }
         return false;
 
-    } */
+    } 
 
     public static void agregar(String clave, String nombre, String precio, String cantidad) {
         Connection conexion = null;
